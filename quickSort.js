@@ -18,5 +18,24 @@ NOTE: DO NOT use JavaScript’s built-in sorting function (Array.prototype.sort)
 */
 
 function quickSort(arr) {
-    
-     }
+  if (arr.length <= 1) { 
+		return arr;
+	} 
+  var pivot=arr.length-1;
+  var left=[];
+  var right=[];
+  for(var i=0;i<arr.length;i++){
+    if(arr[i]>pivot){
+      right.push(arr[i]);
+    }else {
+      left.push(arr[i]);
+    }
+  }
+  
+return quickSort(left).concat(pivot,quickSort(right));
+}
+
+
+  
+
+  
